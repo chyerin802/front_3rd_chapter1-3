@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from 'react'
-import UserContext, { UserContextType } from './UserContext'
+import { UserContext, UserContextType } from './UserContext'
 import { useNotificationContext } from '../notification'
 import { User } from '../../types'
 
@@ -7,7 +7,7 @@ interface UserProviderProps {
   children: ReactNode
 }
 
-const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
+export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null)
   const { addNotification } = useNotificationContext()
 
@@ -31,5 +31,3 @@ const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
   )
 }
-
-export default UserProvider

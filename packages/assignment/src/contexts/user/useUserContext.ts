@@ -1,12 +1,10 @@
 import { useContext } from 'react'
-import UserContext from './UserContext'
+import { UserContext } from './UserContext'
 
-const useUserContext = () => {
+export const useUserContext = () => {
   const context = useContext(UserContext)
   if (context === undefined) {
     throw new Error('useUserContext must be used within an UserProvider')
   }
   return context
 }
-
-export default useUserContext

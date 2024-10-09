@@ -1,11 +1,11 @@
 import React, { useState, ReactNode } from 'react'
-import ThemeContext, { ThemeContextType } from './ThemeContext'
+import { ThemeContext, ThemeContextType } from './ThemeContext'
 
 interface ThemeProviderProps {
   children: ReactNode
 }
 
-const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState('light')
 
   const toggleTheme = () => {
@@ -23,5 +23,3 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     </ThemeContext.Provider>
   )
 }
-
-export default ThemeProvider

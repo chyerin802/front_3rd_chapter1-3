@@ -7,5 +7,4 @@ export interface UserContextType {
   logout: () => void
 }
 
-const UserContext = createContext<UserContextType | undefined>(undefined)
-export default UserContext
+export const UserContext = createContext<UserContextType | undefined>(undefined)

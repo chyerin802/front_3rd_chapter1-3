@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from 'react'
-import NotificationContext, {
+import {
+  NotificationContext,
   NotificationContextType,
 } from './NotificationContext'
 import { Notification } from '../../types'
@@ -8,7 +9,7 @@ interface NotificationProviderProps {
   children: ReactNode
 }
 
-const NotificationProvider: React.FC<NotificationProviderProps> = ({
+export const NotificationProvider: React.FC<NotificationProviderProps> = ({
   children,
 }) => {
   const [notifications, setNotifications] = useState<Notification[]>([])
@@ -40,5 +41,3 @@ const NotificationProvider: React.FC<NotificationProviderProps> = ({
     </NotificationContext.Provider>
   )
 }
-
-export default NotificationProvider

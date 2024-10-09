@@ -7,7 +7,6 @@ export interface NotificationContextType {
   removeNotification: (id: number) => void
 }
 
-const NotificationContext = createContext<NotificationContextType | undefined>(
-  undefined
-)
-export default NotificationContext
+export const NotificationContext = createContext<
+  NotificationContextType | undefined
+>(undefined)

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import NotificationContext from './NotificationContext'
+import { NotificationContext } from './NotificationContext'
 
-const useNotificationContext = () => {
+export const useNotificationContext = () => {
   const context = useContext(NotificationContext)
   if (context === undefined) {
     throw new Error(
@@ -10,5 +10,3 @@ const useNotificationContext = () => {
   }
   return context
 }
-
-export default useNotificationContext
